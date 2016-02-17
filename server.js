@@ -1,20 +1,7 @@
 var express = require('express');
 var app = express();
 
-var middleware = {
-	requireAuthentication: function(req,res,next){
-		console.log('auth');
-		next();
-	}
-	logger: function(req,res,next){
-		console.log(req.method);
-		next();
-
-	}
-	// new Date().toString;
-
-};
-
+var middleware=require('./middleware.js');
 //app.use(middleware.requireAuthentication);
 
 // Comment '/' to go to index static file directly
