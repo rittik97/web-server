@@ -1,6 +1,11 @@
+// git rm --cache -r node_module
+
+//git remote -v
+//git diff
+
 var express = require('express');
 var app = express();
-
+var PORT=process.env.PORT || 3000;
 var middleware=require('./middleware.js');
 //app.use(middleware.requireAuthentication);
 
@@ -13,6 +18,6 @@ app.use(express.static(__dirname + '/Public'));
 
 
 
-app.listen(3000,function(){
-	console.log('express started on port 3000');
+app.listen(PORT,function(){
+	console.log('express started on port '+PORT);
 });
