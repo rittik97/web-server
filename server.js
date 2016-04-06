@@ -1,16 +1,18 @@
 // git rm --cache -r node_module
-//git remote -v
+//git remote -v shows all remote branches
 //git diff
+//Heroku open git push heroku master
 
+var request = require('request');
 var express = require('express');
 var app = express();
-var PORT=process.env.PORT || 3000;
+var PORT=process.env.PORT || 3000;  //Heroku gives port
 var middleware=require('./middleware.js');
 //app.use(middleware.requireAuthentication);
 
 // Comment '/' all of it ? to go to index static file directly
-app.get('/',middleware.requireAuthentication,function(req,res){
-	res.send('Hola !');
+app.get('/about',middleware.requireAuthentication,function(req,res){
+	res.send('yourguide.me');
 });
 
 app.use(express.static(__dirname + '/Public'));
