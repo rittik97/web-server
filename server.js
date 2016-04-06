@@ -1,5 +1,4 @@
 // git rm --cache -r node_module
-
 //git remote -v
 //git diff
 
@@ -9,7 +8,7 @@ var PORT=process.env.PORT || 3000;
 var middleware=require('./middleware.js');
 //app.use(middleware.requireAuthentication);
 
-// Comment '/' to go to index static file directly
+// Comment '/' all of it ? to go to index static file directly
 app.get('/',middleware.requireAuthentication,function(req,res){
 	res.send('Hola !');
 });
