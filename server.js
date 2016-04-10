@@ -3,12 +3,24 @@
 //git diff
 //Heroku open git push heroku master
 
-//var request = require('request');
+var request = require('request');
 var express = require('express');
 var app = express();
 var PORT=process.env.PORT || 3000;  //Heroku gives port
 var middleware=require('./middleware.js');
 //app.use(middleware.requireAuthentication);
+
+var url='https://api.uber.com/v1/products';
+request({
+		url: url,
+		json: true
+	}, function (error, response, body) {
+		if (error) {
+			console.log('Unable to fetch weather.');
+		} else {
+			console.log(body);
+		}
+	});
 
 // Comment '/' all of it ? to go to index static file directly
 app.get('/about',middleware.requireAuthentication,function(req,res){
