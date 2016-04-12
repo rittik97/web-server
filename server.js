@@ -3,7 +3,7 @@
 //git diff
 //Heroku open git push heroku master
 
-//var request = require('request');
+var request = require('request');
 var express = require('express');
 var bodyParser = require("body-parser");
 var app = express();
@@ -22,7 +22,7 @@ app.get('/about',middleware.requireAuthentication,function(req,res){
 
 app.post('/tryme',function(req,res){
 	var start_latitude=parseFloat(req.body.start_latitude);
-	var start_longitude=parseFloat(req.body.start_latitude);
+	var start_longitude=parseFloat(req.body.start_longitude);
 
 	var end_latitude=parseFloat(req.body.end_latitude);
 	var end_longitude=parseFloat(req.body.end_longitude);
