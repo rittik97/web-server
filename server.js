@@ -9,8 +9,10 @@ var app = express();
 var PORT=process.env.PORT || 3000;  //Heroku gives port
 var middleware=require('./middleware.js');
 //app.use(middleware.requireAuthentication);
+//app.get('/uber',funtion(req,res){});
 
-var url='https://api.uber.com/v1/products';
+var url='https://api.uber.com/v1/estimates/price?server_token=f1nvxqcW3F031byA9PQv-a_3BaHFG_uj1WK-lo-I&start_latitude=40.798496&start_longitude=-73.964578&end_latitude=40.807552&end_longitude=-73.962573';
+
 request({
 		url: url,
 		json: true
@@ -25,6 +27,10 @@ request({
 // Comment '/' all of it ? to go to index static file directly
 app.get('/about',middleware.requireAuthentication,function(req,res){
 	res.send('yourguide.me');
+});
+
+app.post('/try',function(req,res){
+	res.send(req.body);
 });
 
 app.use(express.static(__dirname + '/Public'));
