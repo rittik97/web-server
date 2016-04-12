@@ -30,7 +30,7 @@ app.get('/about',middleware.requireAuthentication,function(req,res){
 });
 
 app.post('/tryme',function(req,res){
-	res.send('Sw:sw');
+	res.send(req.body.Sw);
 });
 
 app.use(express.static(__dirname + '/Public'));
