@@ -29,7 +29,7 @@ app.get('/about',middleware.requireAuthentication,function(req,res){
 	res.send('yourguide.me');
 });
 
-app.post('/try',function(req,res){
+app.post('/tryme',function(req,res){
 	res.send(req.body);
 });
 
