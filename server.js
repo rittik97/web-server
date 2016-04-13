@@ -37,13 +37,14 @@ app.post('/tryme',function(req,res){
 			if (error) {
 				console.log('Unable to fetch weather.');
 			} else {
-				//console.log(body);
+				console.log(body);
 				ubermesage=body;
 			}
 		});
 
 
-	res.send(ubermesage);
+	res.send(ubermesage);		
+
 });
 
 app.use(express.static(__dirname + '/Public'));
