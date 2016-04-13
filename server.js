@@ -37,7 +37,7 @@ app.post('/tryme',function(req,res){
 			if (error) {
 				console.log('Unable to fetch weather.');
 			} else {
-				console.log(body);
+				console.log(body.prices(0));
 				ubermesage=body;
 			}
 		});
