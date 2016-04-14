@@ -68,7 +68,7 @@ app.post('/tryme',function(req,res){
 	var end_latitude=parseFloat(req.body.end_latitude);
 	var end_longitude=parseFloat(req.body.end_longitude);
 
-	var url='https://api.uber.com/v1/estimates/price?server_token=f1nvxqcW3F031byA9PQv-a_3BaHFG_uj1WK-lo-I&start_latitude=40.798496&start_longitude=-73.964578&end_latitude=40.807552&end_longitude=-73.962573';
+	var url='https://api.uber.com/v1/estimates/price?server_token=f1nvxqcW3F031byA9PQv-a_3BaHFG_uj1WK-lo-I&start_latitude='+start_latitude+'&start_longitude='+start_longitude+'&end_latitude='+end_latitude+'&end_longitude='+end_longitude+'';
 	var ubermesage;
 
 	request({
