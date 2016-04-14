@@ -3,6 +3,8 @@
 //git diff
 //Heroku open git push heroku master
 
+//  40.761418, -73.977679             40.757582, -73.984159
+
 var request = require('request');
 var express = require('express');
 var bodyParser = require("body-parser");
@@ -62,6 +64,9 @@ app.get('/about',middleware.requireAuthentication,function(req,res){
 
 
 app.post('/tryme',function(req,res){
+
+	console.log(req.body);
+
 	var start_latitude=parseFloat(req.body.start_latitude);
 	var start_longitude=parseFloat(req.body.start_longitude);
 
