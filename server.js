@@ -68,6 +68,9 @@ app.post('/tryme',function(req,res){
 	//
 	//req.body=JSON.stringify(req.body);
 	console.log(req.body);
+	req.body=JSON.stringify(req.body);
+	console.log(req.body);
+	/*
 
 	var start_latitude=parseFloat(req.body.start_latitude);
 	var start_longitude=parseFloat(req.body.start_longitude);
@@ -99,7 +102,7 @@ app.post('/tryme',function(req,res){
 
 
 			
-
+*/
 });
 
 app.use(express.static(__dirname + '/Public'));
