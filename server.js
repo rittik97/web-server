@@ -65,7 +65,7 @@ app.get('/about',middleware.requireAuthentication,function(req,res){
 
 app.post('/tryme',function(req,res){
 
-	console.log(parseFloat(req.body.start_latitude));
+	console.log(req.body);
 	/*
 
 	var start_latitude=parseFloat(req.body.start_latitude);
