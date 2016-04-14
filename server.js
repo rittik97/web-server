@@ -85,11 +85,12 @@ app.post('/tryme',function(req,res){
 				var price2 = ubermesage.prices[1].estimate;
 				returnmessage="I can call you an "+ubertype1+" which will cost "+price1;
 				console.log(returnmessage);
+				res.send(returnmessage);
 			}
 		});
 
 
-	res.send(returnmessage);		
+			
 
 });
 
