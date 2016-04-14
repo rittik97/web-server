@@ -65,7 +65,7 @@ app.get('/about',middleware.requireAuthentication,function(req,res){
 
 app.post('/tryme',function(req,res){
 
-	console.log(req.body);
+	//console.log(req.body);
 
 	var start_latitude=parseFloat(req.body.start_latitude);
 	var start_longitude=parseFloat(req.body.start_longitude);
@@ -74,6 +74,7 @@ app.post('/tryme',function(req,res){
 	var end_longitude=parseFloat(req.body.end_longitude);
 
 	var url='https://api.uber.com/v1/estimates/price?server_token=f1nvxqcW3F031byA9PQv-a_3BaHFG_uj1WK-lo-I&start_latitude='+start_latitude+'&start_longitude='+start_longitude+'&end_latitude='+end_latitude+'&end_longitude='+end_longitude+'';
+	console.log(url);
 	var ubermesage;
 
 	request({
