@@ -46,9 +46,7 @@ var url='https://api.uber.com/v1/estimates/price?server_token=f1nvxqcW3F031byA9P
 
 
 
-
-
-
+var x={ '{"start_latitude":"40.6874279","start_longitude":"-73.9717465","end_latitude":"40.6846622","end_longitude":"-73.9775268"}': '' };
 
 
 
@@ -66,7 +64,7 @@ app.get('/about',middleware.requireAuthentication,function(req,res){
 app.post('/tryme',function(req,res){
 
 	//
-	req.body=req.body.replace('''','');
+	//req.body=req.body.replace('''','');
 	console.log(req.body);
 	req.body=JSON.stringify(req.body);
 	console.log(req.body);
