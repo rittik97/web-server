@@ -62,7 +62,7 @@ app.post('/tryme',function(req,res){
 
 	//
 	//req.body=req.body.replace('''','');
-	console.log(req);
+	console.log(req.query);
 	//req.body=JSON.stringify(req.body);
 	//console.log(req.body);
 	/*
