@@ -11,8 +11,8 @@ var bodyParser = require("body-parser");
 var app = express();
 var PORT=process.env.PORT || 3000;  //Heroku gives port
 var middleware=require('./middleware.js');
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+//app.use(bodyParser.urlencoded({ extended: false }));
+//app.use(bodyParser.json());
 var returnmessage;
 //app.use(middleware.requireAuthentication);
 //app.get('/uber',funtion(req,res){});
@@ -47,9 +47,16 @@ var url='https://api.uber.com/v1/estimates/price?server_token=f1nvxqcW3F031byA9P
 
 
 var x={ '{"start_latitude":"40.6874279","start_longitude":"-73.9717465","end_latitude":"40.6846622","end_longitude":"-73.9775268"}': '' };
+var x1=x.toString().substring(0,13);
+console.log(x.toString(4));
+console.log(x1.substring(0,13));
 
+var str="";
+for(i=0;i<x.length;i++){
+	str+=x.toString(i);
 
-
+}
+console.log(str);
 
 
 
@@ -66,8 +73,8 @@ app.post('/tryme',function(req,res){
 	//
 	//req.body=req.body.replace('''','');
 	console.log(req.body);
-	req.body=JSON.stringify(req.body);
-	console.log(req.body);
+	//req.body=JSON.stringify(req.body);
+	//console.log(req.body);
 	/*
 
 	var start_latitude=parseFloat(req.body.start_latitude);
