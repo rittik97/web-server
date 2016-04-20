@@ -87,7 +87,8 @@ app.post('/tryme',function(req,res){
 			} else {
 				ubermesage = body;
 				var ubertype1 = ubermesage.prices[0].display_name;
-				var price1 = ubermesage.prices[0].estimate;
+				var price1_low = ubermesage.prices[0].minimum;
+				var price1_high = ubermesage.prices[0].high_estimate;
 				var ubertype2 = ubermesage.prices[1].display_name;
 				var price2 = ubermesage.prices[1].estimate;
 				returnmessage="I can call you an "+ubertype1+" which will cost "+price1;
