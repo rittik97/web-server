@@ -11,8 +11,8 @@ var bodyParser = require("body-parser");
 var app = express();
 var PORT=process.env.PORT || 3000;  //Heroku gives port
 var middleware=require('./middleware.js');
-//app.use(bodyParser.urlencoded({ extended: false }));
-//app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 var returnmessage;
 //app.use(middleware.requireAuthentication);
 //app.get('/uber',funtion(req,res){});
@@ -63,6 +63,7 @@ app.post('/tryme',function(req,res){
 	//
 	//req.body=req.body.replace('''','');
 	console.log(req.query);
+	console.log(req.query.start_latitude);
 	//req.body=JSON.stringify(req.body);
 	//console.log(req.body);
 	/*
