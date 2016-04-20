@@ -46,7 +46,7 @@ var url='https://api.uber.com/v1/estimates/price?server_token=f1nvxqcW3F031byA9P
 
 
 
-var x={ '{"start_latitude":"40.6874279","start_longitude":"-73.9717465","end_latitude":"40.6846622","end_longitude":"-73.9775268"}': '' };
+//var x={ '{"start_latitude":"40.6874279","start_longitude":"-73.9717465","end_latitude":"40.6846622","end_longitude":"-73.9775268"}': '' };
 
 
 
@@ -66,13 +66,13 @@ app.post('/tryme',function(req,res){
 	console.log(req.query.start_latitude);
 	//req.body=JSON.stringify(req.body);
 	//console.log(req.body);
-	/*
+	
 
-	var start_latitude=parseFloat(req.body.start_latitude);
-	var start_longitude=parseFloat(req.body.start_longitude);
+	var start_latitude=parseFloat(req.query.start_latitude);
+	var start_longitude=parseFloat(req.query.start_longitude);
 
-	var end_latitude=parseFloat(req.body.end_latitude);
-	var end_longitude=parseFloat(req.body.end_longitude);
+	var end_latitude=parseFloat(req.query.end_latitude);
+	var end_longitude=parseFloat(req.query.end_longitude);
 
 	var url='https://api.uber.com/v1/estimates/price?server_token=f1nvxqcW3F031byA9PQv-a_3BaHFG_uj1WK-lo-I&start_latitude='+start_latitude+'&start_longitude='+start_longitude+'&end_latitude='+end_latitude+'&end_longitude='+end_longitude+'';
 	console.log(url);
@@ -98,7 +98,7 @@ app.post('/tryme',function(req,res){
 
 
 			
-*/
+
 });
 
 app.use(express.static(__dirname + '/Public'));
