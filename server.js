@@ -62,7 +62,7 @@ app.post('/tryme',function(req,res){
 
 	//
 	//req.body=req.body.replace('''','');
-	console.log(req.query);
+	//console.log(req.query);
 	console.log(req.query.start_latitude);
 	//req.body=JSON.stringify(req.body);
 	//console.log(req.body);
@@ -91,8 +91,9 @@ app.post('/tryme',function(req,res){
 				var ubertype2 = ubermesage.prices[1].display_name;
 				var price2 = ubermesage.prices[1].estimate;
 				returnmessage="I can call you an "+ubertype1+" which will cost "+price1;
-				console.log(returnmessage);
-				res.send(returnmessage);
+
+				console.log(JSON.stringify(returnmessage));
+				res.send(JSON.stringify(returnmessage));
 			}
 		});
 
