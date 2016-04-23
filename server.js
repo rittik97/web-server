@@ -13,7 +13,12 @@ var PORT=process.env.PORT || 3000;  //Heroku gives port
 var middleware=require('./middleware.js');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+var pg = require('pg');
+var connectionString =  'postgress://GuideMaster:Guide123@guidedb.cnciq2lktcww.us-west-2.rds.amazonaws.com:5432/postgres';
+//var connectionString =  'guidedb.cnciq2lktcww.us-west-2.rds.amazonaws.com:5432/hostname:GuideMaster';
 var returnmessage;
+
+
 //app.use(middleware.requireAuthentication);
 //app.get('/uber',funtion(req,res){});
 /*
@@ -101,6 +106,40 @@ app.post('/tryme',function(req,res){
 
 
 			
+
+});
+
+
+app.post('/phonesensordata',function(req,res){
+	/*
+
+	var accx=40.00;
+	var accy=40.00;
+	var accz=40.00;
+	var gyrox=40.00;
+	var gyroy=40.00;
+	var gyroz=40.00;
+	*/
+	var accx=parseFloat(req.query.accx);
+	var accy=parseFloat(req.query.accy);
+	var accz=parseFloat(req.query.accz);
+	var gyrox=parseFloat(req.query.gyrox);
+	var gyroy=parseFloat(req.query.gyroy);
+	var gyroz=parseFloat(req.query.gyroz);
+
+	var client= new pg.Client(connectionString);
+	client.conect(function(err) {
+	  if(err) {	    return console.error('Could not connect to postgres', err);
+	}
+	  client.query('insert into phonesensors values(now(),'+accx+','+accy+','+accz+','+gyrox+','+gyroy+','+gyroz+')', function(err, result) {
+	    if(err) {
+	      return console.error('error running query', err);
+	    }
+	    //console.log(result.rows[0].theTime);
+	    //output: Tue Jan 15 2013 19:12:47 GMT-600 (CST)
+	    client.end();
+	  });
+	});
 
 });
 
