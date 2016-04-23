@@ -120,6 +120,7 @@ app.post('/phonesensordata',function(req,res){
 	var gyroy=40.00;
 	var gyroz=40.00;
 	*/
+	console.log('Wrote');
 	var accx=parseFloat(req.query.accx);
 	var accy=parseFloat(req.query.accy);
 	var accz=parseFloat(req.query.accz);
