@@ -121,7 +121,7 @@ app.get('/phonesensordata',function(req,res){
 	var gyroz=40.00;
 	*/
 	console.log(req.query);
-	
+	var success=false;
 	var accx=parseFloat(req.query.accx);
 	var accy=parseFloat(req.query.accy);
 	var accz=parseFloat(req.query.accz);
@@ -137,11 +137,13 @@ app.get('/phonesensordata',function(req,res){
 	    if(err) {
 	      return console.error('error running query', err);
 	    }
+	    success=true;
 	    //console.log(result.rows[0].theTime);
 	    //output: Tue Jan 15 2013 19:12:47 GMT-600 (CST)
 	    client.end();
 	  });
 	});
+	res.send("Wrote");
 
 //https://enigmatic-reaches-59241.herokuapp.com/phonesensordata?accx=1&accy=1&accz=1&gyrox=1&gyroy=1&gyroz=60
 });
