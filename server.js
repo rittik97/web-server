@@ -120,7 +120,8 @@ app.post('/phonesensordata',function(req,res){
 	var gyroy=40.00;
 	var gyroz=40.00;
 	*/
-	console.log('Wrote');
+	console.log(req.query);
+	/*
 	var accx=parseFloat(req.query.accx);
 	var accy=parseFloat(req.query.accy);
 	var accz=parseFloat(req.query.accz);
@@ -141,6 +142,7 @@ app.post('/phonesensordata',function(req,res){
 	    client.end();
 	  });
 	});
+*/
 
 });
 
