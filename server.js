@@ -129,7 +129,7 @@ app.post('/phonesensordata',function(req,res){
 	var gyroz=parseFloat(req.query.gyroz);
 
 	var client= new pg.Client(connectionString);
-	client.conect(function(err) {
+	client.connect(function(err) {
 	  if(err) {	    return console.error('Could not connect to postgres', err);
 	}
 	  client.query('insert into phonesensors values(now(),'+accx+','+accy+','+accz+','+gyrox+','+gyroy+','+gyroz+')', function(err, result) {
