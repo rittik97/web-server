@@ -110,7 +110,7 @@ app.post('/tryme',function(req,res){
 });
 
 
-app.get('/phonesensordata',function(req,res){
+app.post('/phonesensordata',function(req,res){
 	/*
 
 	var accx=40.00;
