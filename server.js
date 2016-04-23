@@ -121,7 +121,7 @@ app.post('/phonesensordata',function(req,res){
 	var gyroz=40.00;
 	*/
 	console.log(req.query);
-	/*
+	
 	var accx=parseFloat(req.query.accx);
 	var accy=parseFloat(req.query.accy);
 	var accz=parseFloat(req.query.accz);
@@ -142,8 +142,8 @@ app.post('/phonesensordata',function(req,res){
 	    client.end();
 	  });
 	});
-*/
 
+//https://enigmatic-reaches-59241.herokuapp.com/phonesensordata?accx=1&accy=1&accz=1&gyrox=1&gyroy=1&gyroz=60
 });
 
 app.use(express.static(__dirname + '/Public'));
